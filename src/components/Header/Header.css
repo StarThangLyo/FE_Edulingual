@@ -1,0 +1,52 @@
+select {
+    border: none; 
+    border-radius: 5px;
+    font-size: 15px;
+    background-color: #fff;
+}
+
+select option {
+    border: none;
+}
+
+.login {
+    margin-left: 5px;
+    margin-right: 40px;
+    background: #27d971;
+    color: #fff;
+    height: 45px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    padding: 0 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    line-height: 45px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .login:hover {
+    background-color: #1aae5a;
+  }
+  
+  .signup {
+    height: 45px;
+    background: #fff;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    padding: 0 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    line-height: 45px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+  
+  .signup:hover {
+    background-color: #4285F4;
+    color: #fff;
+  }
+  

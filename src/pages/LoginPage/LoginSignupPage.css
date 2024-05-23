@@ -1,0 +1,198 @@
+.page-container{
+    /* flex-direction: row; */
+    display: flex;
+    justify-content: space-between;
+    max-height: auto;
+}
+
+
+
+
+
+.text{
+    color: #27d971;
+    font-size: 48px;
+    font-weight: 700;
+    
+}
+
+/* .underline{
+    width: 61px;
+    height: 6px;
+    background: #3c009d;
+    border-radius: 9px;
+} */
+
+.inputs{
+    margin-top: 55px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+.input{
+    display: flex;
+    align-items: center;
+    width: 480px;
+    /* background: #eaeaea; */
+    border-radius: 6px;
+    border: solid 1px;
+}
+
+.icon{
+    margin: 0 30px;
+}
+
+.input input{
+    width: 400px;
+    padding: 10px;
+    background: transparent;
+    border: none;
+    outline: none;
+    font-size: 19px;
+}
+
+.forgot-password{
+    font-size: 18px;
+    margin-left: 330px;
+}
+
+.forgot-password span{
+    color: #0056b3;
+    cursor: pointer;
+}
+
+.submit-forgot-password{
+    padding: 10px;
+    margin-top: 20px;
+    font-size: 16px;
+    color: #fff;
+    background-color: #27d971; /* Bootstrap primary blue */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 480px;
+    transition: background-color 0.3s, transform 0.3s;
+
+}
+
+.form-container{
+    gap: 30px;
+    flex: 1;
+}
+
+
+
+.submit-login {
+    padding: 10px;
+    margin-top: 20px;
+    font-size: 16px;
+    color: #fff;
+    background-color: #27d971; /* Bootstrap primary blue */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 480px;
+    
+    transition: background-color 0.3s, transform 0.3s;
+  }
+  
+  /* Hover effect */
+  .submit-login:hover {
+    background-color: #0056b3; /* Darker shade of blue */
+    transform: scale(1.05); /* Slightly enlarge the button */
+  }
+
+  .submit-signup {
+    /* Basic styles */
+    padding: 10px;
+    margin-top: 20px;
+    font-size: 16px;
+    color: #fff;
+    background-color: #27d971; /* Bootstrap primary blue */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 480px;
+    
+    transition: background-color 0.3s, transform 0.3s;
+  }
+  
+  /* Hover effect */
+  .submit-signup:hover {
+    background-color: #0056b3; /* Darker shade of blue */
+    transform: scale(1.05); /* Slightly enlarge the button */
+  }
+
+  /* .image-logoLogin{
+    display: flex;
+    justify-content: center;
+  } */
+
+  
+  .image-container img {
+    width: 800px; /* Giới hạn chiều rộng ảnh */
+    height: 735px;
+  }
+
+
+  .submit-login, .submit-signup, .submit-forgot-password {
+    padding: 10px;
+    margin-top: 20px;
+    background-color: #4CAF50; /* Adjust as needed */
+    color: white;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .submit {
+    margin-top: 10px;
+    cursor: pointer;
+    text-align: left;
+    margin-left: 80px;
+  }
+
+  .submit span{
+    color: #27d971;
+  }
+  
+  /* .submit span.underline-text {
+    text-decoration: underline;
+  } */
+
+  .google-login-button {
+    display: flex;
+    align-items: center;
+    width: 480px;
+    justify-content: center;
+    padding: 10px;
+    background-color: #4285F4;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+  }
+  
+  .google-login-button .google-icon {
+    margin-right: 8px;
+    font-size: 20px;
+  }
+  
+
+  .welcome-text {
+    font-size: 24px;
+    font-weight: bold;
+  }
+  
+  .brand-name {
+    font-size: 24px;
+    font-weight: bold;
+    color: #4caf50; /* green color */
+  }
+  
+  .tagline {
+    font-size: 18px;
+    font-style: italic;
+  }
+  

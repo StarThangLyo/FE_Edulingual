@@ -1,0 +1,152 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    /* background-color: #f5f5f5; */
+}
+
+.container {
+    position: relative;
+}
+
+.frame-container {
+    position: relative;
+    text-align: center;
+}
+
+.frame {
+    width: 100%;
+    height: auto;
+    border: 1px solid #ccc;
+
+}
+
+.frame-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: black;
+    text-align: center;
+}
+
+h1 {
+    text-align: center;
+    color: #333;
+}
+
+.highlight {
+    color: #28a745;
+}
+
+.search-bar {
+    display: flex;
+    background-color: white;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 695px;
+
+  }
+
+  .search-bar select, .search-bar button {
+    padding: 10px;
+    font-size: 20px;
+    border: none;
+    margin-right: 20px;
+    background-color: white;
+  }
+
+.search-bar button {
+    font-size: 20px;
+    background: #27d971;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.search-bar button:hover {
+    background: #218838;
+}
+
+.sort-bar {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.sort-bar select {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.course-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.course-card {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    overflow: hidden;
+    width: 300px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.course-card img {
+    width: 100%;
+    height: auto;
+}
+
+.course-info {
+    padding: 15px;
+}
+
+.course-info h2 {
+    margin-top: 0;
+    font-size: 1.2em;
+    color: #333;
+}
+
+.course-info p {
+    margin: 10px 0;
+    color: #555;
+}
+
+.additional-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.rating, 
+.followers {
+    color: #28a745;
+    font-weight: bold;
+}
+
+.location {
+    color: black;
+}
+
+.load-more {
+    display: block;
+    margin: 20px auto;
+    padding: 10px 20px;
+    border: none;
+    background-color: #28a745;
+    color: #fff;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.load-more:hover {
+    background-color: #218838;
+}
