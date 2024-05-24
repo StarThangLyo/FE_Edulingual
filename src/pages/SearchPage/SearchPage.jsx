@@ -77,12 +77,12 @@ export const SearchPage = () => {
       </div>
       <div className={styles.searchResults}>
         <div className={styles.result}>
-        <p style={{fontWeight: 'bold'}}>1,133 Kết quả</p>
+        <p style={{fontWeight: 'bold', marginLeft: '200px', marginRight: '100px'}}>1,133 Kết quả</p>
         </div>
         <div className={styles.searndnfilter}></div>
         <input type="text" placeholder="Tìm kiếm" className={styles.searchInput} />
-        <select name="sort" id="sort">
-          <option value="rating">Lọc theo: Đánh giá cao</option>
+        <select name="sort" id="sort" style={{border: '1px solid', padding: '10px'}}>
+          <option value="rating">Đánh giá cao</option>
           <option value="popularity">Phổ biến</option>
           <option value="new">Mới nhất</option>
         </select>
