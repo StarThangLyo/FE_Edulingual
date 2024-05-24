@@ -10,7 +10,6 @@ const courses = [
     course: "Khóa học IELTS 6.0",
     fee: "10 Triệu VND",
     rating: 4.9,
-    followers: 4019,
     location: "Hà Nội",
     img: "https://lsvn.vn/storage/uploads/files/1014/6013c1d703084.jpg"
   },
@@ -20,7 +19,6 @@ const courses = [
     course: "Khóa học Giao tiếp",
     fee: "4 Triệu VND",
     rating: 4.9,
-    followers: 4019,
     location: "Hà Nội",
     img: "https://lsvn.vn/storage/uploads/files/1014/6013c1d703084.jpg"
   },
@@ -30,7 +28,6 @@ const courses = [
     course: "Khóa học tiếng Hàn",
     fee: "3,5 Triệu VND",
     rating: 4.85,
-    followers: 8019,
     location: "HCM",
     img: "https://lsvn.vn/storage/uploads/files/1014/6013c1d703084.jpg"
   },
@@ -40,7 +37,6 @@ const courses = [
     course: "Khóa học tiếng Hàn",
     fee: "3,5 Triệu VND",
     rating: 4.85,
-    followers: 8019,
     location: "HCM",
     img: "https://lsvn.vn/storage/uploads/files/1014/6013c1d703084.jpg"
   },
@@ -50,7 +46,6 @@ const courses = [
     course: "Khóa học tiếng Hàn",
     fee: "3,5 Triệu VND",
     rating: 4.85,
-    followers: 8019,
     location: "HCM",
     img: "https://lsvn.vn/storage/uploads/files/1014/6013c1d703084.jpg"
   },
@@ -60,7 +55,6 @@ const courses = [
     course: "Khóa học tiếng Hàn",
     fee: "3,5 Triệu VND",
     rating: 4.85,
-    followers: 8019,
     location: "HCM",
     img: "https://lsvn.vn/storage/uploads/files/1014/6013c1d703084.jpg"
   },
@@ -70,7 +64,6 @@ const courses = [
     course: "Khóa học tiếng Hàn",
     fee: "3,5 Triệu VND",
     rating: 4.85,
-    followers: 8019,
     location: "HCM",
     img: "https://lsvn.vn/storage/uploads/files/1014/6013c1d703084.jpg"
   },
@@ -185,7 +178,6 @@ export const HomePage = () => {
               <p><strong>Học phí:</strong> {course.fee}</p>
               <div className={styles.additionalInfo}>
                 <div className={styles.rating}><StarOutlined />{course.rating}</div>
-                <div className={styles.followers}><TeamOutlined />{course.followers} Theo dõi</div>
                 <div className={styles.location}><EnvironmentOutlined /> {course.location}</div>
               </div>
             </div>
