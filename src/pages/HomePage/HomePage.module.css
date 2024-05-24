@@ -1,4 +1,5 @@
-body {
+/* HomePage.module.css */
+.body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
@@ -9,7 +10,7 @@ body {
     position: relative;
 }
 
-.frame-container {
+.frameContainer {
     position: relative;
     text-align: center;
 }
@@ -18,10 +19,9 @@ body {
     width: 100%;
     height: auto;
     border: 1px solid #ccc;
-
 }
 
-.frame-text {
+.frameText {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -30,34 +30,28 @@ body {
     text-align: center;
 }
 
-h1 {
-    text-align: center;
-    color: #333;
-}
-
 .highlight {
     color: #28a745;
 }
 
-.search-bar {
+.searchBar {
     display: flex;
     background-color: white;
     padding: 10px;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     width: 695px;
+}
 
-  }
-
-  .search-bar select, .search-bar button {
+.searchBar select, .searchBar button {
     padding: 10px;
     font-size: 20px;
     border: none;
     margin-right: 20px;
     background-color: white;
-  }
+}
 
-.search-bar button {
+.searchBar button {
     font-size: 20px;
     background: #27d971;
     color: #fff;
@@ -67,59 +61,60 @@ h1 {
     cursor: pointer;
 }
 
-.search-bar button:hover {
+.searchBar button:hover {
     background: #218838;
 }
 
-.sort-bar {
+.sortBar {
     display: flex;
     justify-content: center;
     margin-bottom: 20px;
 }
 
-.sort-bar select {
+.sortBar select {
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 5px;
 }
 
-.course-list {
+.courseList {
     display: flex;
     flex-wrap: wrap;
     gap: 20px;
     justify-content: center;
 }
 
-.course-card {
+.courseCard {
     background-color: #fff;
     border: 1px solid #ddd;
     border-radius: 10px;
     overflow: hidden;
     width: 300px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-.course-card img {
+.courseCard img {
     width: 100%;
     height: auto;
 }
 
-.course-info {
+.courseInfo {
     padding: 15px;
+    text-align: start;
 }
 
-.course-info h2 {
+.courseInfo h2 {
     margin-top: 0;
     font-size: 1.2em;
     color: #333;
 }
 
-.course-info p {
+.courseInfo p {
     margin: 10px 0;
     color: #555;
 }
 
-.additional-info {
+.additionalInfo {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -136,7 +131,7 @@ h1 {
     color: black;
 }
 
-.load-more {
+.loadMore {
     display: block;
     margin: 20px auto;
     padding: 10px 20px;
@@ -147,6 +142,6 @@ h1 {
     cursor: pointer;
 }
 
-.load-more:hover {
+.loadMore:hover {
     background-color: #218838;
 }

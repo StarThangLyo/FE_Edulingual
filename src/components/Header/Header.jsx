@@ -9,8 +9,8 @@ const Header = () => {
         Edu Lingual
       </div>
       <div className="menu" style={{ display: 'flex', flex: '1', marginTop: '35px' }}>
-        <a href="#" style={{marginRight: '20px'}}>Tìm kiếm</a>
-        <a href="#" style={{marginRight: '20px'}}>Blog</a>
+        <a href="#" style={{marginRight: '20px', color: 'black'}}>Tìm kiếm</a>
+        <a href="#" style={{marginRight: '20px', color: 'black'}}>Blog</a>
         <select name="other" id="other" style={{height: '25px', width: '60px', border: 'none', fontSize: '16px'}}>
           <option value="all" style={{ fontSize: '18px' }}>Khác</option>
           <option value="english">Tài liệu</option>

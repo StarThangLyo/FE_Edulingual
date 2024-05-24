@@ -1,0 +1,135 @@
+.searchContainer {
+    padding: 20px;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  
+  .searchBar {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+  }
+  
+  .searchBar select,
+  .searchBar .searchButton {
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid;
+  }
+  
+  .searchButton {
+    background-color: #27d971;
+    color: #fff;
+    /* border: none; */
+    cursor: pointer;
+  }
+  
+  .searchResults {
+    display: flex;
+    /* justify-content: space-between; */
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+  .searchInput {
+    /* flex-grow: 1; */
+    margin-left: 20px;
+    margin-right: 20px;
+    padding: 10px;
+    font-size: 16px;
+  }
+  
+
+  .courseList {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+  
+  .courseCard {
+    display: flex;
+    border: 1px solid #ddd;
+    padding: 20px;
+    border-radius: 8px;
+    background-color: #fff;
+  }
+  
+  .courseCard img {
+    width: 200px;
+    height: 220px;
+    border-radius: 10px;
+    margin-right: 20px;
+  }
+  
+  .courseInfo {
+    text-align: start;
+    display: flex;
+  }
+  
+   .courseInfo h2 {
+    margin: 0;
+  }
+  
+  /*.courseInfo p {
+    margin: 5px 0;
+  } */
+  
+  .additionalInfo {
+    display: flex;
+    /* justify-content: space-between; */
+    margin-top: 10px;
+  }
+  
+  /* .additionalInfo > div {
+    display: flex;
+    align-items: center;
+  }
+   */
+  .additionalInfo .rating,
+  .additionalInfo .feedback {
+    margin-right: 10px;
+  }
+  
+  .courseActions {
+    width: 360px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+  }
+
+  .courseIf {
+    display: flex;
+    flex-direction: column;
+    /* flex: 1; */
+  }
+  
+  .enrollButton,
+  .detailsButton {
+    font-size: 14px;
+    width: 120px;
+    height: 38px;
+    cursor: pointer;
+  }
+  
+  .enrollButton {
+    background-color: #27d971;
+    color: #fff;
+    border: none;
+    margin-bottom: 10px;
+  }
+  
+  .detailsButton {
+    background-color: #fff;
+    color: black;
+    border: none;
+    border: 2px solid #ccc;
+    transition: 0.5s;
+  }
+
+
+  .detailsButton:hover{
+    background-color: #ddd; /* Darker shade of blue */
+    transform: scale(1.05); /* Slightly enlarge the button */
+    border: 2px solid #ccc;
+
+  }
+  

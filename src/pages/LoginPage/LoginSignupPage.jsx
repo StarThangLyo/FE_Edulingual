@@ -1,73 +1,73 @@
 import React, { useState } from 'react';
-import './LoginSignupPage.css';
+import styles from './LoginSignupPage.module.css';
 import { LockOutlined, MailOutlined, UserOutlined, GoogleOutlined } from '@ant-design/icons';
 
 export const LoginSignupPage = () => {
-  const [action, setAction] = useState('Login');
+  const [action, setAction] = useState('Đăng nhập');
 
   return (
-    <div className='page-container'>
-      <div className='image-container'>
+    <div className={styles['page-container']}>
+      <div className={styles['image-container']}>
         <img src="/image/logoLogin.png" alt="" />
       </div>
-      <div className='form-container' style={{marginRight: '100px'}}>
-        <div style={{marginLeft: '80px'}}>
-          <div style={{marginRight: '500px'}}>
-          <img src="/image/logo.png" style={{width:'50px', marginTop: '20px', background: 'black'}} alt="" />
+      <div className={styles['form-container']}>
+        <div style={{ marginLeft: '80px' }}>
+          <div style={{ marginRight: '500px' }}>
+            <img src="/image/logo.png" style={{ width: '50px', marginTop: '20px', background: 'black' }} alt="" />
           </div>
-          <p className='welcome-text' style={{textAlign: 'left', margin: 0}}>Chào mừng bạn đến với</p>
-          <p className='brand-name' style={{textAlign: 'left', margin: 0}}>Edu Lingual</p>
-          <p className='tagline' style={{textAlign: 'left', margin: 0, marginBottom: '50px'}}>Where the best begin your journey</p>
+          <p className={styles['welcome-text']}>Chào mừng bạn đến với</p>
+          <p className={styles['brand-name']}>Edu Lingual</p>
+          <p className={styles['tagline']}>Where the best begin your journey</p>
         </div>
-        <div className='header'>
-          <div className='text'>{action}</div>
+        <div className={styles['header']}>
+          <div className={styles['text']}>{action}</div>
         </div>
-        <div className='inputs'>
-          {action === 'Login' && (
+        <div className={styles['inputs']}>
+          {action === 'Đăng nhập' && (
             <>
-              <button className='google-login-button'>
-                <GoogleOutlined className='google-icon' />
-                Login with Google
+              <button className={styles['google-login-button']}>
+                <GoogleOutlined className={styles['google-icon']} />
+                Đăng nhập với Google
               </button>
-              <div className='or-container' style={{display:'flex', alignItems: 'center'}}>
-                <hr className='divider' style={{width:'225px'}} />
-                <span className='or-text' style={{fontWeight: 'bold'}}>or</span>
-                <hr className='divider' style={{width:'225px'}} />
+              <div className={styles['or-container']}>
+                <hr className={styles['divider']} />
+                <span className={styles['or-text']}>or</span>
+                <hr className={styles['divider']} />
               </div>
             </>
           )}
-          {action === 'Sign Up' && (
-            <div className='input'>
-              <div className='icon'>
+          {action === 'Đăng kí' && (
+            <div className={styles['input']}>
+              <div className={styles['icon']}>
                 <UserOutlined />
               </div>
               <input type='name' placeholder='Name' />
             </div>
           )}
-          {action !== 'Forgot Password' && (
-            <div className='input'>
-              <div className='icon'>
+          {action !== 'Quên mật khẩu' && (
+            <div className={styles['input']}>
+              <div className={styles['icon']}>
                 <MailOutlined />
               </div>
               <input type='email' placeholder='Email' />
             </div>
           )}
-          {action === 'Login' && (
-            <div className='forgot-password' onClick={() => setAction('Forgot Password')}>
-              <span>Forgot Password?</span>
+          {action === 'Đăng nhập' && (
+            <div className={styles['forgot-password']} onClick={() => setAction('Quên mật khẩu')}>
+              <span>Quên mật khẩu?</span>
             </div>
           )}
-          {action !== 'Forgot Password' && (
-            <div className='input'>
-              <div className='icon'>
+          {action !== 'Quên mật khẩu' && (
+            <div className={styles['input']}>
+              <div className={styles['icon']}>
                 <LockOutlined />
               </div>
-              <input type='password' placeholder='Password' />
+              <input type='password' placeholder='Mật khẩu' />
             </div>
           )}
-          {action === 'Forgot Password' && (
-            <div className='input'>
-              <div className='icon'>
+          {action === 'Quên mật khẩu' && (
+            <div className={styles['input']}>
+              <div className={styles['icon']}>
                 <MailOutlined />
               </div>
               <input type='email' placeholder='Email' />
@@ -75,31 +75,31 @@ export const LoginSignupPage = () => {
           )}
         </div>
 
-        {action === 'Login' ? (
-          <button className='submit-login'>
-            Login
+        {action === 'Đăng nhập' ? (
+          <button className={styles['submit-login']}>
+            Đăng nhập
           </button>
-        ) : action === 'Sign Up' ? (
-          <button className='submit-signup'>
-            Sign Up
+        ) : action === 'Đăng kí' ? (
+          <button className={styles['submit-signup']}>
+            Đăng kí
           </button>
         ) : (
-          <button className='submit-forgot-password'>
-            Reset Password
+          <button className={styles['submit-forgot-password']}>
+            Đặt lại mật khẩu
           </button>
         )}
 
-        {action === 'Login' ? (
-          <div className='submit' onClick={() => setAction('Sign Up')}>
-            You have no account? <span>Sign Up</span>
+        {action === 'Đăng nhập' ? (
+          <div className={styles['submit']} onClick={() => setAction('Đăng kí')}>
+            Chưa có tài khoản? <span>Đăng kí</span>
           </div>
-        ) : action === 'Sign Up' ? (
-          <div className='submit' onClick={() => setAction('Login')}>
-            You have account? <span>Login</span>
+        ) : action === 'Đăng kí' ? (
+          <div className={styles['submit']} onClick={() => setAction('Đăng nhập')}>
+            Đã có tài khoản <span>Đăng nhập</span>
           </div>
         ) : (
-          <div className='submit' onClick={() => setAction('Login')}>
-            Back to <span className='underline-text'>Login</span>
+          <div className={styles['submit']} onClick={() => setAction('Đăng nhập')}>
+            Trở về <span className={styles['underline-text']}>Đăng nhập</span>
           </div>
         )}
       </div>
@@ -107,4 +107,3 @@ export const LoginSignupPage = () => {
   );
 };
 
-// export default LoginSignupPage;

@@ -1,6 +1,7 @@
 import React from 'react';
-import './HomePage.css';
+import styles from './HomePage.module.css';
 import { EnvironmentOutlined, StarOutlined, TeamOutlined } from '@ant-design/icons';
+import { useNavigate } from 'react-router-dom';
 
 const courses = [
   {
@@ -87,17 +88,59 @@ const courses = [
 ];
 
 export const HomePage = () => {
+  const navigate = useNavigate();
+
+  const handleSearchClick = () => {
+    navigate('/search');
+  };
+
   return (
-    <section className="container">
-      <div className="frame-container">
-        <img src="./image/frame.png" alt="" className="frame" />
-        <div className="frame-text">
-          <h1 style={{margin: 0}}>Tìm kiếm người hướng dẫn</h1>
-          <h1 style={{color: '#0056b3', margin: 0, marginBottom: '50px'}}>đồng hành cùng bạn</h1>
-          <p style={{marginBottom: '50px'}}>Xây dựng một trang web cho cộng đồng, hoạt động học tập và khóa học của bạn.</p>
-        
-      <div className="search-bar">
-        <select name="language" id="language">
+    <section className={styles.container}>
+      <div className={styles.frameContainer}>
+        <img src="./image/frame.png" alt="" className={styles.frame} />
+        <div className={styles.frameText}>
+          <h1 style={{ margin: 0 }}>Tìm kiếm người hướng dẫn</h1>
+          <h1 style={{ color: '#0056b3', margin: 0, marginBottom: '50px' }}>đồng hành cùng bạn</h1>
+          <p style={{ marginBottom: '50px' }}>Xây dựng một trang web cho cộng đồng, hoạt động học tập và khóa học của bạn.</p>
+
+          <div className={styles.searchBar}>
+            <select name="language" id="language">
+              <option value="all">Ngôn ngữ</option>
+              <option value="english">Tiếng Anh</option>
+              <option value="chinese">Tiếng Trung</option>
+              <option value="japanese">Tiếng Nhật</option>
+              <option value="korea">Tiếng Hàn</option>
+              <option value="france">Tiếng Pháp</option>
+            </select>
+            <select name="course" id="course">
+              <option value="all">Tất cả khóa học</option>
+              <option value="english">Giao tiếp</option>
+              <option value="chinese">A1</option>
+              <option value="japanese">A2</option>
+              <option value="korea">B1</option>
+              <option value="france">B2</option>
+            </select>
+            <select name="level" id="level">
+              <option value="all">Tất cả địa điểm</option>
+              <option value="q1">Quận 1</option>
+              <option value="q2">Quận 2</option>
+              <option value="q3">Quận 3</option>
+              <option value="q4">Quận 4</option>
+              <option value="q5">Quận 5</option>
+              <option value="q6">Quận 6</option>
+              <option value="q7">Quận 7</option>
+              <option value="q8">Quận 8</option>
+              <option value="thuduc">Thủ Đức</option>
+            </select>
+            <button type="button" style={{ margin: 0 }} onClick={handleSearchClick}>Tìm kiếm</button>
+          </div>
+        </div>
+      </div>
+      <div style={{ display: 'flex', justifyContent: 'center' }}>
+        <h1>Những khóa học <span className={styles.highlight}> nổi bật </span></h1>
+      </div>
+      <div className={styles.sortBar}>
+        <select name="language" id="language" style={{ marginRight: '20px' }}>
           <option value="all">Ngôn ngữ</option>
           <option value="english">Tiếng Anh</option>
           <option value="chinese">Tiếng Trung</option>
@@ -105,43 +148,7 @@ export const HomePage = () => {
           <option value="korea">Tiếng Hàn</option>
           <option value="france">Tiếng Pháp</option>
         </select>
-        <select name="course" id="course">
-          <option value="all">Tất cả khóa học</option>
-          <option value="english">Giao tiếp</option>
-          <option value="chinese">A1</option>
-          <option value="japanese">A2</option>
-          <option value="korea">B1</option>
-          <option value="france">B2</option>
-        </select>
-        <select name="level" id="level">
-          <option value="all">Tất cả địa điểm</option>
-          <option value="q1">Quận 1</option>
-          <option value="q2">Quận 2</option>
-          <option value="q3">Quận 3</option>
-          <option value="q4">Quận 4</option>
-          <option value="q5">Quận 5</option>
-          <option value="q6">Quận 6</option>
-          <option value="q7">Quận 7</option>
-          <option value="q8">Quận 8</option>
-          <option value="thuduc">Thủ Đức</option>
-        </select>
-        <button type="button" style={{margin: 0}}>Tìm kiếm</button>
-      </div>
-      </div>
-      </div>
-      <div style={{display: 'flex', justifyContent: 'center'}}>
-        <h1>Những khóa học <span style={{color: '#27d971'}}> nổi bật </span></h1>
-      </div>
-      <div className="sort-bar">
-        <select name="language" id="language" style={{marginRight: '20px'}}>
-          <option value="all">Ngôn ngữ</option>
-          <option value="english">Tiếng Anh</option>
-          <option value="chinese">Tiếng Trung</option>
-          <option value="japanese">Tiếng Nhật</option>
-          <option value="korea">Tiếng Hàn</option>
-          <option value="france">Tiếng Pháp</option>
-        </select>
-        <select name="price" id="price" style={{marginRight: '20px'}}>
+        <select name="price" id="price" style={{ marginRight: '20px' }}>
           <option value="all">Tất cả giá</option>
           <option value="1tr-2tr">1tr-2tr</option>
           <option value="2tr-3tr">2tr-3tr</option>
@@ -149,7 +156,7 @@ export const HomePage = () => {
           <option value="4tr-5tr">4tr-5tr</option>
           <option value="5tr-6tr">5tr-6tr</option>
         </select>
-        <select name="distric" id="distric" style={{marginRight: '20px'}}>
+        <select name="distric" id="distric" style={{ marginRight: '20px' }}>
           <option value="all">Tất cả địa điểm</option>
           <option value="q1">Quận 1</option>
           <option value="q2">Quận 2</option>
@@ -167,25 +174,25 @@ export const HomePage = () => {
           <option value="new">Mới nhất</option>
         </select>
       </div>
-      <div className="course-list">
+      <div className={styles.courseList}>
         {courses.map((course, index) => (
-          <div className="course-card" key={index}>
+          <div className={styles.courseCard} key={index}>
             <img src={course.img} alt={course.name} />
-            <div className="course-info">
+            <div className={styles.courseInfo}>
               <h2>{course.name}</h2>
               <p><strong>Kinh nghiệm:</strong> {course.experience}</p>
               <p><strong>Khóa học:</strong> {course.course}</p>
               <p><strong>Học phí:</strong> {course.fee}</p>
-              <div className="additional-info">
-                <div className="rating"><StarOutlined />{course.rating}</div>
-                <div className="followers"><TeamOutlined />{course.followers} Theo dõi</div>
-                <div className="location"><EnvironmentOutlined /> {course.location}</div>
+              <div className={styles.additionalInfo}>
+                <div className={styles.rating}><StarOutlined />{course.rating}</div>
+                <div className={styles.followers}><TeamOutlined />{course.followers} Theo dõi</div>
+                <div className={styles.location}><EnvironmentOutlined /> {course.location}</div>
               </div>
             </div>
           </div>
         ))}
       </div>
-      <button className="load-more">Xem thêm...</button>
+      <button className={styles.loadMore}>Xem thêm...</button>
     </section>
   );
 };

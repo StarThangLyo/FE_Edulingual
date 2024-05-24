@@ -6,6 +6,7 @@ import {NotFoundPage} from '../pages/NotFoundPage/NotFoundPage';
 import PermissionDeniedPage from '../pages/PermissionDeniedPage/PermissionDeniedPage';
 import { LoginSignupPage } from '../pages/LoginPage/LoginSignupPage';
 import { HomePage } from '../pages/HomePage/HomePage';
+import { SearchPage } from '../pages/SearchPage/SearchPage';
 
 export const AppRouters = () => {
 	return (
@@ -16,6 +17,7 @@ export const AppRouters = () => {
 			<Route path="*" element={<NotFoundPage />} />
 			<Route path="/loginpage" element={<LoginSignupPage />}></Route>
 			<Route path="/homepage" element={<HomePage />}></Route>
+			<Route path="/search" element={<SearchPage />}></Route>
 		</Routes>
 	);
 };
