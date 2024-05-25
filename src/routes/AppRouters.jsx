@@ -22,7 +22,7 @@ export const AppRouters = () => {
       <Route path="/loginpage" element={<LoginSignupPage />}></Route>
       <Route path="/homepage" element={<HomePage />}></Route>
       <Route path="/search" element={<SearchPage />}></Route>
-      <Route path="/profile" element={<ProfilePage />}></Route>
+      <Route path="/my-journey" element={<ProfilePage />}></Route>
     </Routes>
   );
 };

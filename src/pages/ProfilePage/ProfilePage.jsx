@@ -1,5 +1,11 @@
-import React from "react";
-import { UploadOutlined, UserOutlined, EditOutlined } from "@ant-design/icons";
+import React, { useState } from "react";
+import { StyleProvider } from "@ant-design/cssinjs";
+import {
+  CheckSquareOutlined,
+  UserOutlined,
+  EditOutlined,
+  CloudDownloadOutlined,
+} from "@ant-design/icons";
 import {
   Layout,
   Menu,
@@ -10,13 +16,18 @@ import {
   Card,
   Flex,
   Button,
+  Radio,
+  Divider,
+  Statistic,
 } from "antd";
 import { Space } from "antd";
 const { Title, Text } = Typography;
 const { Header, Content, Footer, Sider } = Layout;
 const cardStyle = {
-  width: "fit-content",
-  background: "#287B62",
+  width: "100%",
+  // background: "#287B62",
+  border: "solid #D1D5DB",
+  borderWidth: 0.5,
   overflow: "hidden",
   borderRadius: 30,
 };
@@ -28,6 +39,8 @@ export const ProfilePage = () => {
   const {
     token: { colorBgContainer, borderRadiusLG },
   } = theme.useToken();
+  const [mode, setMode] = useState(1);
+
   return (
     <ConfigProvider
       theme={{
@@ -79,7 +92,7 @@ export const ProfilePage = () => {
             style={{ marginTop: 30 }}
             className="menuItem"
             mode="inline"
-            defaultSelectedKeys={["1"]}
+            defaultSelectedKeys={["2"]}
             items={[
               {
                 key: "1",
@@ -120,7 +133,7 @@ export const ProfilePage = () => {
                 height: "100%",
               }}
             >
-              <Card
+              {/* <Card
                 hoverable
                 style={cardStyle}
                 styles={{
@@ -233,14 +246,584 @@ export const ProfilePage = () => {
                     Kiểm tra
                   </Button>
                 </div>
-              </div>
+              </div> */}
+
+              <Space
+                size={"large"}
+                direction="vertical"
+                style={{ width: "100%" }}
+              >
+                <Radio.Group
+                  buttonStyle={"solid"}
+                  value={mode}
+                  onChange={(e) => setMode(e.target.value)}
+                >
+                  <Space size={"middle"}>
+                    <Radio.Button
+                      value={1}
+                      type="primary"
+                      size="large"
+                      style={{
+                        borderRadius: 30,
+                        paddingLeft: 25,
+                        paddingRight: 25,
+                        height: 45,
+                        lineHeight: "45px",
+                        borderWidth: 1,
+                      }}
+                    >
+                      Kiểm tra
+                    </Radio.Button>
+                    <Radio.Button
+                      value={2}
+                      ghost
+                      type="primary"
+                      size="large"
+                      style={{
+                        borderRadius: 30,
+                        paddingLeft: 25,
+                        paddingRight: 25,
+                        height: 45,
+                        lineHeight: "45px",
+                        borderWidth: 1,
+                      }}
+                    >
+                      Kết quả
+                    </Radio.Button>
+                  </Space>
+                </Radio.Group>
+                {mode === 1 && (
+                  <Space
+                    direction="vertical"
+                    size={30}
+                    style={{ width: "100%" }}
+                  >
+                    <Card
+                      hoverable
+                      style={cardStyle}
+                      styles={{
+                        body: {
+                          padding: 20,
+                        },
+                      }}
+                    >
+                      <Flex
+                        gap={30}
+                        style={{
+                          borderRadius: 100,
+                        }}
+                      >
+                        <div
+                          style={
+                            {
+                              // padding: 20,
+                              // paddingBottom: 40,
+                              // paddingRight: 30,
+                            }
+                          }
+                        >
+                          <img
+                            alt="avatar"
+                            src="/image/preview.png"
+                            //   style={imgStyle}
+                          />
+                        </div>
+                        <Flex
+                          vertical
+                          align="flex-start"
+                          justify="space-between"
+                          gap={20}
+                          style={{
+                            flexGrow: 1,
+                          }}
+                        >
+                          <Space
+                            align="start"
+                            direction="vertical"
+                            style={{ width: "100%" }}
+                          >
+                            <Text style={{}}>Ngày 21 tháng 2, 2024</Text>
+
+                            <Text strong style={{ fontSize: 28 }}>
+                              Đề kiểm tra trắc nghiệm
+                            </Text>
+                          </Space>
+
+                          <Flex align="center" gap={10}>
+                            <Avatar size={64} icon={<UserOutlined />} />
+                            <Space direction="vertical">
+                              <Text strong>Hằng</Text>
+                              <Text>English Teacher</Text>
+                            </Space>
+                          </Flex>
+                        </Flex>
+                        <Flex
+                          vertical
+                          align="flex-start"
+                          justify="space-between"
+                          gap={20}
+                          style={
+                            {
+                              // padding: 24,
+                            }
+                          }
+                        >
+                          <div>
+                            <Text style={{}}>
+                              <Text strong>40</Text> câu hỏi
+                            </Text>
+                            <Divider
+                              type="vertical"
+                              style={{ borderWidth: 1 }}
+                            />
+                            <Text style={{}}>
+                              <Text strong>60</Text> phút
+                            </Text>
+                          </div>
+
+                          <div
+                            style={{
+                              background: "#53B748",
+                              padding: 5,
+                              borderRadius: 10,
+                            }}
+                          >
+                            <Button
+                              size="large"
+                              target="_blank"
+                              style={{
+                                // background: "transparent",
+                                border: "solid",
+                                // borderWidth: 1,
+                                height: 50,
+                                marginRight: 15,
+                                fontWeight: 600,
+                              }}
+                            >
+                              Làm kiểm tra
+                            </Button>
+                            <svg
+                              style={{ marginRight: 10 }}
+                              width="29"
+                              height="16"
+                              viewBox="0 0 29 16"
+                              fill="none"
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <path
+                                d="M21 15L26.25 9.75L27.2929 8.70711C27.6834 8.31658 27.6834 7.68342 27.2929 7.29289L21 1"
+                                stroke="#1C1C1C"
+                                stroke-width="2"
+                                stroke-linecap="round"
+                              />
+                              <path
+                                d="M21 8L1.75 8"
+                                stroke="#1C1C1C"
+                                stroke-width="2"
+                                stroke-linecap="round"
+                              />
+                            </svg>
+                          </div>
+                        </Flex>
+                      </Flex>
+                    </Card>
+                    <Card
+                      hoverable
+                      style={cardStyle}
+                      styles={{
+                        body: {
+                          padding: 20,
+                        },
+                      }}
+                    >
+                      <Flex gap={30} style={{ borderRadius: 100 }}>
+                        <div
+                          style={
+                            {
+                              // padding: 20,
+                              // paddingBottom: 40,
+                              // paddingRight: 30,
+                            }
+                          }
+                        >
+                          <img
+                            alt="avatar"
+                            src="/image/preview1.png"
+                            //   style={imgStyle}
+                          />
+                        </div>
+                        <Flex
+                          vertical
+                          align="flex-start"
+                          justify="space-between"
+                          gap={20}
+                          style={{
+                            flexGrow: 1,
+                          }}
+                        >
+                          <Space
+                            align="start"
+                            direction="vertical"
+                            style={{ width: "100%" }}
+                          >
+                            <Text style={{}}>Ngày 21 tháng 2, 2024</Text>
+
+                            <Text strong style={{ fontSize: 28 }}>
+                              Đề kiểm tra trắc nghiệm
+                            </Text>
+                          </Space>
+
+                          <Flex align="center" gap={10}>
+                            <Avatar size={64} icon={<UserOutlined />} />
+                            <Space direction="vertical">
+                              <Text strong>Hằng</Text>
+                              <Text>English Teacher</Text>
+                            </Space>
+                          </Flex>
+                        </Flex>
+                        <Flex
+                          vertical
+                          align="flex-start"
+                          justify="space-between"
+                          gap={20}
+                          style={
+                            {
+                              // padding: 24,
+                            }
+                          }
+                        >
+                          <div>
+                            <Text style={{}}>
+                              <Text strong>40</Text> câu hỏi
+                            </Text>
+                            <Divider
+                              type="vertical"
+                              style={{ borderWidth: 1 }}
+                            />
+                            <Text style={{}}>
+                              <Text strong>60</Text> phút
+                            </Text>
+                          </div>
+
+                          <div
+                            style={{
+                              background: "#53B748",
+                              padding: 5,
+                              borderRadius: 10,
+                            }}
+                          >
+                            <Button
+                              size="large"
+                              target="_blank"
+                              style={{
+                                // background: "transparent",
+                                border: "solid",
+                                // borderWidth: 1,
+                                height: 50,
+                                marginRight: 15,
+                                fontWeight: 600,
+                              }}
+                            >
+                              Làm kiểm tra
+                            </Button>
+                            <svg
+                              style={{ marginRight: 10 }}
+                              width="29"
+                              height="16"
+                              viewBox="0 0 29 16"
+                              fill="none"
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <path
+                                d="M21 15L26.25 9.75L27.2929 8.70711C27.6834 8.31658 27.6834 7.68342 27.2929 7.29289L21 1"
+                                stroke="#1C1C1C"
+                                stroke-width="2"
+                                stroke-linecap="round"
+                              />
+                              <path
+                                d="M21 8L1.75 8"
+                                stroke="#1C1C1C"
+                                stroke-width="2"
+                                stroke-linecap="round"
+                              />
+                            </svg>
+                          </div>
+                        </Flex>
+                      </Flex>
+                    </Card>
+                  </Space>
+                )}
+                {mode === 2 && (
+                  <Space
+                    direction="vertical"
+                    size={30}
+                    style={{ width: "100%" }}
+                  >
+                    <Card
+                      hoverable
+                      style={cardStyle}
+                      styles={{
+                        body: {
+                          padding: 20,
+                        },
+                      }}
+                    >
+                      <Flex gap={30} style={{ borderRadius: 100 }}>
+                        <div
+                          style={{
+                            // padding: 20,
+                            // paddingBottom: 40,
+                            // paddingRight: 30,
+                            flexGrow: 0.2,
+                            flexDirection: "column",
+                            display: "flex",
+                            justifyContent: "center",
+                            alignItems: "center",
+                          }}
+                        >
+                          {/* <img
+                            alt="avatar"
+                            src="/image/preview.png"
+                            //   style={imgStyle}
+                          /> */}
+                          <Title level={2}>8.0</Title>
+                          <Text>Điểm</Text>
+                        </div>
+                        <Flex
+                          vertical
+                          align="flex-start"
+                          justify="space-between"
+                          gap={20}
+                          style={{
+                            flexGrow: 1,
+                          }}
+                        >
+                          <Space
+                            align="start"
+                            direction="vertical"
+                            style={{ width: "100%" }}
+                          >
+                            <Text style={{}}>Ngày 21 tháng 2, 2024</Text>
+
+                            <Text strong style={{ fontSize: 28 }}>
+                              Đề kiểm tra trắc nghiệm
+                            </Text>
+                          </Space>
+
+                          <Flex align="center" gap={10}>
+                            <Avatar size={64} icon={<UserOutlined />} />
+                            <Space direction="vertical">
+                              <Text strong>Hằng</Text>
+                              <Text>English Teacher</Text>
+                            </Space>
+                          </Flex>
+                        </Flex>
+                        <Flex
+                          vertical
+                          align="flex-start"
+                          justify="space-between"
+                          gap={20}
+                          style={
+                            {
+                              // padding: 24,
+                            }
+                          }
+                        >
+                          <Space direction="vertical">
+                            <div>
+                              <Text style={{}}>
+                                <Text strong>40</Text> câu hỏi
+                              </Text>
+                              <Divider
+                                type="vertical"
+                                style={{ borderWidth: 1 }}
+                              />
+                              <Text style={{}}>
+                                <Text strong>60</Text> phút
+                              </Text>
+                            </div>
+                            <Space>
+                              <Space
+                                style={{
+                                  background: "#3FB335",
+                                  padding: 5,
+                                  borderRadius: 5,
+                                  color: "white",
+                                  width: 60,
+                                }}
+                              >
+                                <CheckSquareOutlined
+                                  style={{ fontSize: "16px", color: "white" }}
+                                />
+                                42
+                              </Space>
+                              <Space
+                                style={{
+                                  background: "#EF5B59",
+                                  padding: 5,
+                                  borderRadius: 5,
+                                  color: "white",
+                                  width: 60,
+                                }}
+                              >
+                                <CheckSquareOutlined
+                                  style={{ fontSize: "16px", color: "white" }}
+                                />
+                                8
+                              </Space>
+                            </Space>
+                          </Space>
+
+                          <Space
+                            style={{
+                              color: "#53B748",
+                              padding: 5,
+                              borderRadius: 10,
+                            }}
+                          >
+                            <CloudDownloadOutlined />
+                            Tải đáp án
+                          </Space>
+                        </Flex>
+                      </Flex>
+                    </Card>
+                    <Card
+                      hoverable
+                      style={cardStyle}
+                      styles={{
+                        body: {
+                          padding: 20,
+                        },
+                      }}
+                    >
+                      <Flex gap={30} style={{ borderRadius: 100 }}>
+                        <div
+                          style={{
+                            // padding: 20,
+                            // paddingBottom: 40,
+                            // paddingRight: 30,
+                            flexGrow: 0.2,
+                            flexDirection: "column",
+                            display: "flex",
+                            justifyContent: "center",
+                            alignItems: "center",
+                          }}
+                        >
+                          {/* <img
+                            alt="avatar"
+                            src="/image/preview.png"
+                            //   style={imgStyle}
+                          /> */}
+                          <Title level={2}>8.0</Title>
+                          <Text>Điểm</Text>
+                        </div>
+                        <Flex
+                          vertical
+                          align="flex-start"
+                          justify="space-between"
+                          gap={20}
+                          style={{
+                            flexGrow: 1,
+                          }}
+                        >
+                          <Space
+                            align="start"
+                            direction="vertical"
+                            style={{ width: "100%" }}
+                          >
+                            <Text style={{}}>Ngày 21 tháng 2, 2024</Text>
+
+                            <Text strong style={{ fontSize: 28 }}>
+                              Đề kiểm tra trắc nghiệm
+                            </Text>
+                          </Space>
+
+                          <Flex align="center" gap={10}>
+                            <Avatar size={64} icon={<UserOutlined />} />
+                            <Space direction="vertical">
+                              <Text strong>Hằng</Text>
+                              <Text>English Teacher</Text>
+                            </Space>
+                          </Flex>
+                        </Flex>
+                        <Flex
+                          vertical
+                          align="flex-start"
+                          justify="space-between"
+                          gap={20}
+                          style={
+                            {
+                              // padding: 24,
+                            }
+                          }
+                        >
+                          <Space direction="vertical">
+                            <div>
+                              <Text style={{}}>
+                                <Text strong>40</Text> câu hỏi
+                              </Text>
+                              <Divider
+                                type="vertical"
+                                style={{ borderWidth: 1 }}
+                              />
+                              <Text style={{}}>
+                                <Text strong>60</Text> phút
+                              </Text>
+                            </div>
+                            <Space>
+                              <Space
+                                style={{
+                                  background: "#3FB335",
+                                  padding: 5,
+                                  borderRadius: 5,
+                                  color: "white",
+                                  width: 60,
+                                }}
+                              >
+                                <CheckSquareOutlined
+                                  style={{ fontSize: "16px", color: "white" }}
+                                />
+                                42
+                              </Space>
+                              <Space
+                                style={{
+                                  background: "#EF5B59",
+                                  padding: 5,
+                                  borderRadius: 5,
+                                  color: "white",
+                                  width: 60,
+                                }}
+                              >
+                                <CheckSquareOutlined
+                                  style={{ fontSize: "16px", color: "white" }}
+                                />
+                                8
+                              </Space>
+                            </Space>
+                          </Space>
+
+                          <Space
+                            style={{
+                              color: "#53B748",
+                              padding: 5,
+                              borderRadius: 10,
+                            }}
+                          >
+                            <CloudDownloadOutlined />
+                            Tải đáp án
+                          </Space>
+                        </Flex>
+                      </Flex>
+                    </Card>
+                  </Space>
+                )}
+              </Space>
             </div>
           </Content>
         </Layout>
       </Layout>
       <Footer
         style={{
-          textAlign: "center",
           background: "#FFFFFF",
         }}
       >
