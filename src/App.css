@@ -39,3 +39,9 @@
 .read-the-docs {
   color: #888;
 }
+.menuItem .ant-menu-item {
+  width: 100% !important;
+}
+.menuItem .ant-menu-title-content {
+  flex: none !important;
+}
